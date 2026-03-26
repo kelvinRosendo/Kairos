@@ -124,9 +124,9 @@ cd kairos
 mvn spring-boot:run
 ```
 
-🚧 Status do Projeto
+## 🚧 Status do Projeto
 
-## 🟡 Em desenvolvimento
+🟡 Em desenvolvimento
 
 - A arquitetura base já foi definida e o projeto está evoluindo com a implementação das funcionalidades principais.
 
