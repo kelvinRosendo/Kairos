@@ -130,11 +130,14 @@ mvn spring-boot:run
 
 - A arquitetura base já foi definida e o projeto está evoluindo com a implementação das funcionalidades principais.
 
+---
+
 🔮 Roadmap
- [] Estrutura base do projeto
- [] Implementação de usuários
- [] Sistema de transações
- [] Controle de orçamento
+
+- [ ] Estrutura base do projeto
+- [ ] Implementação de usuários
+- [ ] Sistema de transações
+- [ ] Controle de orçamento
 
 ---
 
