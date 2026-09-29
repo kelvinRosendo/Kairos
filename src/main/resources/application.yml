@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: kairos
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/kairos}
+    username: ${DB_USER:kairos}
+    password: ${DB_PASSWORD:kairos}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+server:
+  port: ${PORT:8080}
