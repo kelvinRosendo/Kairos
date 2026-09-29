@@ -1,150 +1,270 @@
-<h1 align="center">⏱️ Kairos</h1>
+<div align="center">
 
-<p align="center">
-  <b>Tome as decisões financeiras certas no momento certo</b>
-</p>
+# Kairos
 
-<p align="center">
-  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow" />
-  <img src="https://img.shields.io/badge/java-17+-blue" />
-  <img src="https://img.shields.io/badge/spring%20boot-3.x-brightgreen" />
-  <img src="https://img.shields.io/badge/license-MIT-lightgrey" />
-</p>
+### Planejamento financeiro pessoal, no momento certo.
 
----
+O **Kairos** é uma plataforma de gestão financeira pessoal criada para transformar receitas, despesas, metas e patrimônio em uma visão simples, previsível e acionável.
 
-## 🚀 Sobre o Projeto
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-1f6feb)
+![Java](https://img.shields.io/badge/Java-17%2B-007396)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F)
+![Flutter](https://img.shields.io/badge/Flutter-mobile-02569B)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-database-336791)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-O **Kairos** é um sistema de gestão financeira pessoal desenvolvido com **Java + Spring Boot**, focado em ajudar usuários a organizarem suas finanças e tomarem decisões mais inteligentes no momento certo.
-
-A aplicação permite planejar o mês financeiro, controlar gastos, registrar entradas e saídas e acompanhar a evolução do dinheiro ao longo do tempo.
+</div>
 
 ---
 
-## 🧠 Ideia Central
+## Visão do produto
 
-> Kairos não é apenas sobre registrar dinheiro — é sobre tomar melhores decisões financeiras.
+O Kairos foi pensado para responder, de forma objetiva, às perguntas mais importantes do mês financeiro:
 
----
+- Quanto já entrou?
+- Quanto ainda vou receber?
+- Quanto já foi pago?
+- Quanto ainda preciso pagar?
+- Quanto do meu saldo já está comprometido?
+- Quanto realmente posso gastar?
+- Quanto posso guardar ou investir?
 
-## 🎯 Funcionalidades
+Mais do que registrar movimentações, o objetivo do Kairos é antecipar decisões e dar previsibilidade ao usuário.
 
-- 📅 Planejamento financeiro mensal  
-- 💸 Registro de receitas e despesas  
-- 📊 Controle de orçamento  
-- 🎯 Definição de metas financeiras  
-- 🔐 Gestão de usuários  
-
----
-
-## 🧱 Arquitetura
-
-O projeto segue uma estrutura moderna baseada em:
-
-- Feature-Based Architecture  
-- Clean Architecture (adaptada)  
-
-### 🔄 Fluxo da aplicação
-
-Controller → Service → Repository → Database
+> **Registrar o passado, organizar o presente e projetar o futuro.**
 
 ---
 
-## 🗄️ Banco de Dados
+## Principais funcionalidades
 
-- PostgreSQL  
-- Flyway (versionamento de banco)  
+### Planejamento financeiro
 
-### 📌 Entidades principais
+- Receitas recebidas e previstas
+- Despesas pagas e pendentes
+- Gastos recorrentes
+- Categorias financeiras
+- Planejamento mensal
+- Saldo projetado
 
-- User  
-- Account  
-- Budget  
-- Transaction  
+### Controle e acompanhamento
+
+- Dashboard mensal
+- Visão de valores recebidos, previstos, pagos e pendentes
+- Kanban financeiro
+- Histórico mensal
+- Fechamento financeiro do mês
+- Controle de dívidas e parcelas
+
+### Patrimônio e metas
+
+- Registro de patrimônio
+- Acompanhamento de investimentos
+- Metas financeiras
+- Definição de aportes
+- Evolução patrimonial
+
+### Alertas e automações
+
+- Contas próximas do vencimento
+- Receitas previstas ainda não confirmadas
+- Compromissos atrasados
+- Limites de gastos por categoria
+- Alertas de saldo projetado
+
+### Integrações futuras
+
+- Integração com o assistente **Kai**
+- Entrada de gastos por voz
+- Consultas financeiras por linguagem natural
+- IA local para análises financeiras
+- Sugestões de alocação e acompanhamento de metas
 
 ---
 
-## ⚙️ Tecnologias Utilizadas
+## Arquitetura
 
-- ☕ Java 17+  
-- 🌱 Spring Boot  
-- 🗄️ PostgreSQL  
-- 🔄 Flyway  
-- 🧰 Maven  
+O Kairos utiliza uma arquitetura centralizada em uma única API.
 
----
-
-# 📂 Estrutura do Projeto Kairos
-
+```text
+                   PostgreSQL
+                       ↑
+                       │
+                 Spring Boot API
+               ↙        ↓         ↘
+        JavaFX Desktop  Flutter   Kai / IA
 ```
-KAIROS/
+
+O backend concentra as regras financeiras e a persistência dos dados.
+
+Os clientes desktop e mobile consomem a mesma API, garantindo que uma alteração realizada em um dispositivo seja refletida nos demais.
+
+---
+
+## Plataformas
+
+### Desktop
+
+Aplicação para PC desenvolvida em **Java + JavaFX**.
+
+Responsabilidades principais:
+
+- Dashboard completo
+- Planejamento mensal
+- Gestão de receitas e despesas
+- Dívidas e parcelas
+- Metas e patrimônio
+- Visualizações financeiras
+
+### Mobile
+
+Aplicação desenvolvida em **Flutter**, inicialmente direcionada ao Android.
+
+Responsabilidades principais:
+
+- Registro rápido de gastos
+- Confirmação de receitas
+- Consulta do saldo projetado
+- Alertas
+- Visão resumida do mês
+- Ações rápidas
+
+### Backend
+
+API desenvolvida em **Java + Spring Boot**.
+
+Responsável por:
+
+- Regras de negócio
+- Persistência dos dados
+- Cálculos financeiros
+- Planejamento mensal
+- Alertas
+- Metas
+- Dívidas
+- Patrimônio
+- Integrações futuras
+
+---
+
+## Stack
+
+| Camada | Tecnologia |
+|---|---|
+| Backend | Java 17+, Spring Boot |
+| Desktop | JavaFX |
+| Mobile | Flutter |
+| Banco de dados | PostgreSQL |
+| Persistência | Spring Data JPA |
+| Migrations | Flyway |
+| Build backend | Maven |
+| API | REST |
+
+---
+
+## Estrutura do repositório
+
+```text
+Kairos/
+├── src/                     # Backend Spring Boot
+│   └── main/
+│       ├── java/
+│       └── resources/
 │
-└── src/
-    ├── main/
-    │   ├── java/com/kairos/
-    │   │   ├── core/
-    │   │   │   ├── config/
-    │   │   │   ├── exception/
-    │   │   │   ├── security/
-    │   │   │   ├── transaction/
-    │   │   │   │   ├── controller/
-    │   │   │   │   ├── model/
-    │   │   │   │   ├── repository/
-    │   │   │   │   └── service/
-    │   │   │   └── utils/
-    │   │   │
-    │   │   ├── features/
-    │   │   │   └── budget/
-    │   │   │       ├── model/
-    │   │   │       └── service/
-    │   │   │
-    │   │   ├── controller/
-    │   │   ├── dto/
-    │   │   ├── repository/
-    │   │   ├── service/
-    │   │   ├── user/
-    │   │   │   └── model/
-    │   │   ├── infra/
-    │   │   ├── shared/
-    │   │   └── KairosApplication.java
-    │   │
-    │   └── resources/
-    │       └── db/
-    │           └── migration/
-    │
-    └── test/
-```
----
-
-## 🛠️ Como Rodar o Projeto
-
-```bash
-git clone https://github.com/kelvinRosendo/kairos.git
-cd kairos
-mvn spring-boot:run
+├── desktop-java/            # Aplicação desktop JavaFX
+│
+├── mobile-flutter/          # Aplicação mobile Flutter
+│
+├── docs/                    # Documentação técnica
+│
+└── pom.xml
 ```
 
-## 🚧 Status do Projeto
+---
 
-🟡 Em desenvolvimento
+## Estado atual
 
-- A arquitetura base já foi definida e o projeto está evoluindo com a implementação das funcionalidades principais.
+O projeto está em fase de construção da base do MVP.
+
+Já estão presentes:
+
+- Estrutura inicial do backend Spring Boot
+- Configuração para PostgreSQL
+- Flyway para versionamento do banco
+- Modelo inicial de lançamentos financeiros
+- API inicial de receitas e despesas
+- Base do cliente desktop em JavaFX
+- Base do cliente mobile em Flutter
+- Documentação da arquitetura
 
 ---
 
-## 🔮 Roadmap
+## Roadmap
 
-- [ ] Estrutura base do projeto
-- [ ] Implementação de usuários
-- [ ] Sistema de transações
-- [ ] Controle de orçamento
+### MVP
+
+- [x] Base do backend
+- [x] Estrutura de lançamentos financeiros
+- [x] API inicial
+- [x] Base JavaFX
+- [x] Base Flutter
+- [ ] Dashboard financeiro
+- [ ] Planejamento mensal
+- [ ] Receitas previstas
+- [ ] Despesas recorrentes
+- [ ] Kanban financeiro
+- [ ] Radar financeiro
+- [ ] Sistema de alertas
+- [ ] Controle de dívidas
+- [ ] Patrimônio
+- [ ] Metas financeiras
+
+### Evolução
+
+- [ ] Fechamento mensal
+- [ ] Histórico financeiro
+- [ ] Regras automáticas de categorização
+- [ ] Integração com Kai
+- [ ] Entrada de gastos por voz
+- [ ] IA local
+- [ ] Análise de metas e patrimônio
+- [ ] Integrações financeiras avançadas
 
 ---
 
-## 🔐 Licença
-Este projeto está sob a licença MIT.
+## Princípios do projeto
 
---- 
+O Kairos é desenvolvido com alguns princípios centrais:
 
-👨‍💻 Autor
-Desenvolvido por Kelvin Rosendo
+- **Uma única fonte de verdade**
+- **Regras financeiras no backend**
+- **Previsibilidade antes de complexidade**
+- **Multiplataforma desde a base**
+- **Automação sem perder controle humano**
+- **IA como apoio, não como fonte de cálculo**
+- **Evolução incremental do MVP**
+
+---
+
+## Documentação
+
+A documentação técnica da arquitetura está disponível em:
+
+```text
+docs/ARCHITECTURE.md
+```
+
+---
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT.
+
+---
+
+<div align="center">
+
+Desenvolvido por **Kelvin Rosendo**
+
+**Kairos — tome decisões financeiras no momento certo.**
+
+</div>
