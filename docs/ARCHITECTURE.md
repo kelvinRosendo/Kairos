@@ -65,7 +65,13 @@ As regras ficam no backend para evitar divergência entre PC, celular e Kai.
 
 ## Princípio
 
-Registrar no celular deve refletir no PC e vice-versa sem sincronização manual.
+Registrar no celular deve refletir no PC e vice-versa após sincronização bem-sucedida. Sem conexão, alterações ficam persistidas no dispositivo e identificadas como pendentes.
+
+## Decisão de evolução — 30/09/2026
+
+Destino planejado: PC antigo do usuário com Linux, executando Spring Boot e PostgreSQL. A preparação poderá ocorrer no domingo, sem data de entrega confirmada. A escolha da distribuição e a configuração do acesso remoto ainda serão definidas. O celular continua acessando somente a API, nunca o PostgreSQL diretamente.
+
+Adicionar persistência offline ao Flutter conforme [OFFLINE_SYNC.md](OFFLINE_SYNC.md). O servidor mantém o estado consolidado e os cálculos oficiais; o celular mantém cópia local e operações ainda não sincronizadas. Esta é uma decisão de arquitetura, ainda não implementada. A versão atual continua dependente de conexão para salvar dados reais.
 
 ## Estrutura inicial do repositório
 

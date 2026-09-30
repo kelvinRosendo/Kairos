@@ -200,6 +200,17 @@ Já estão presentes:
 
 ## Roadmap
 
+### Plano de execução atual
+
+A primeira entrega será um **caderno financeiro mobile (Flutter/Android) para uso pessoal em outubro de 2026**, com interface escura, receitas e despesas do mês, confirmação de pagamentos/recebimentos e saldo projetado. Os módulos abaixo continuam como visão de evolução; não são todos requisitos da primeira versão.
+
+- [Sprints e critérios de conclusão](docs/ROADMAP.md)
+- [Regras financeiras da primeira versão](docs/RULES.md)
+- [Direção visual e experiência de uso](docs/UI_UX.md)
+- [Fluxo de trabalho e prompts para Codex / Open Code](docs/WORKFLOW.md)
+- [Executar o aplicativo mobile e conectar a API](mobile-flutter/README.md)
+- [Registro das entregas e verificações](docs/DELIVERY_LOG.md)
+
 ### MVP
 
 - [x] Base do backend

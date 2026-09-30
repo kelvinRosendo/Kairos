@@ -76,6 +76,27 @@ public class FinancialEntry {
         this.updatedAt = OffsetDateTime.now();
     }
 
+    public FinancialEntry(UUID id, EntryType type, String description, String category, BigDecimal amount,
+                          LocalDate expectedDate, boolean recurring, String notes) {
+        this(type, description, category, amount, expectedDate, recurring, notes);
+        this.id = id;
+    }
+
+    public void reopen() {
+        this.status = EntryStatus.PLANNED;
+        this.settledDate = null;
+        this.updatedAt = OffsetDateTime.now();
+    }
+
+    public void edit(String description, String category, BigDecimal amount, LocalDate expectedDate, String notes) {
+        this.description = description;
+        this.category = category;
+        this.amount = amount;
+        this.expectedDate = expectedDate;
+        this.notes = notes;
+        this.updatedAt = OffsetDateTime.now();
+    }
+
     public UUID getId() { return id; }
     public EntryType getType() { return type; }
     public EntryStatus getStatus() { return status; }

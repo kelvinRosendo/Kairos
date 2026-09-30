@@ -25,8 +25,9 @@ public class FinancialEntryController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public FinancialEntry create(@Valid @RequestBody CreateFinancialEntryRequest request) {
-        return service.create(request);
+    public FinancialEntry create(@Valid @RequestBody CreateFinancialEntryRequest request,
+            @RequestHeader(value = "Idempotency-Key", required = false) UUID operationId) {
+        return service.create(request, operationId);
     }
 
     @GetMapping
@@ -40,6 +41,15 @@ public class FinancialEntryController {
             @PathVariable UUID id,
             @RequestParam(required = false)
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
-        return service.settle(id, date == null ? LocalDate.now() : date);
+        return service.settle(id, date == null ? com.kairos.features.finance.service.FinanceOverviewService.today() : date);
     }
+
+    @PutMapping("/{id}")
+    public FinancialEntry edit(@PathVariable UUID id, @Valid @RequestBody CreateFinancialEntryRequest request) {
+        return service.edit(id, request);
+    }
+    @PatchMapping("/{id}/cancel")
+    public FinancialEntry cancel(@PathVariable UUID id) { return service.changeState(id, true); }
+    @PatchMapping("/{id}/reopen")
+    public FinancialEntry reopen(@PathVariable UUID id) { return service.changeState(id, false); }
 }
